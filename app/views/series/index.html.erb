@@ -1,0 +1,20 @@
+<div class="container">
+    <form role="form" action="/">
+        <h2 class="">Encontrando Séries</h2>
+            <input type="text" class="form-control" placeholder="Ex: Marvel" name="keywords">
+        <br>
+        <button class="btn btn-primary btn-block" type="submit">Procurar</button>
+        <br>
+    </form>
+    <section class="series">
+      <% if @series.present? %>
+        <% @series.each do |serie| %>
+          <div class="col-md-12">
+            <h1><%= serie.name %></h1>
+            <p><%= serie.description %></p>
+            <p><a href="<%= serie.link %>">Veja mais clicando aqui</a></p>
+          </div>
+        <% end %>
+    <% end %>
+    </selection>
+</div>
